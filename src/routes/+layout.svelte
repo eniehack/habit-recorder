@@ -3,6 +3,8 @@
 	import { account, graph } from '$lib/store';
 	import { onDestroy } from 'svelte';
 	import type { Unsubscriber } from 'svelte/store';
+	import Header from '$lib/Header.svelte';
+	import '../app.css';
 
 	let accountSubscriber: Unsubscriber | null = null;
 	let graphSubscriber: Unsubscriber | null = null;
@@ -33,9 +35,15 @@
 		if (accountSubscriber !== null) {
 			accountSubscriber();
 		}
+		if (graphSubscriber !== null) {
+			graphSubscriber();
+		}
 	});
 </script>
 
+<Header />
 <main>
-	<slot />
+	<div class="container mx-auto">
+		<slot />
+	</div>
 </main>
