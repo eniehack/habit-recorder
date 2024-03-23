@@ -20,7 +20,7 @@
 		for (const graph of json['graphs']) {
 			graphs.push({ id: graph['id'], name: graph['name'] });
 		}
-    $graph = graphs;
+		$graph = graphs;
 		window.alert('ok');
 	};
 
