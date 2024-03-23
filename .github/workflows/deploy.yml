@@ -40,7 +40,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/habit-recorder'
+          BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
           pnpm run build
           touch build/.nojekyll
